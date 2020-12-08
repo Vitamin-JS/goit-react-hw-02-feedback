@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Feedback from './components/FeedbackOptions/FeedbackOptions';
+import Feedback from './components/FeedbackOptions';
 
 class App extends Component {
   state = {
@@ -8,16 +8,22 @@ class App extends Component {
     bad: 0,
   };
 
-  // handleMakeFeedback = {}
-
   getItemName = name => {
     return `${name.slice(0, 1).toUpperCase()}${name.slice(1).toLowerCase()}`;
+  };
+
+  handleLeaveFeedback = item => {
+    this.setState(prevState => ({ [item]: prevState[item] + 1 }));
   };
 
   render() {
     return (
       <>
-        <Feedback options={this.state} getItemName={this.getItemName} />
+        <Feedback
+          options={this.state}
+          getItemName={this.getItemName}
+          handleLeaveFeedback={this.handleLeaveFeedback}
+        />
       </>
     );
   }

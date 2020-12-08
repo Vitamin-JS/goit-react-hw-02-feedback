@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import s from './FeedbackOptions.module.css';
 
-function Feedback({ options, getItemName }) {
+function Feedback({ options, getItemName, handleLeaveFeedback }) {
   const feedbackNames = Object.keys(options);
 
   return (
@@ -11,23 +11,32 @@ function Feedback({ options, getItemName }) {
       <ul className={s.feedback__list}>
         {feedbackNames.map(item => (
           <li key={item}>
-            <button className={s.btn}>{getItemName(item)}</button>
+            <button onClick={() => handleLeaveFeedback(item)} className={s.btn}>
+              {getItemName(item)}
+            </button>
           </li>
         ))}
       </ul>
       <h2>Statistics</h2>
-      <p>Good: </p>
-      <p>Neutral: </p>
-      <p>Bad: </p>
+      <ul>
+        git
+        {feedbackNames.map(item => (
+          <li key={item}>
+            <p>
+              {getItemName(item)}
+              {':'}
+            </p>
+          </li>
+        ))}
+      </ul>
     </>
   );
 }
 
 Feedback.propTypes = {
-  options: PropTypes.objectOf(PropTypes.number).isRequired /*Комментарий*/,
+  options: PropTypes.objectOf(PropTypes.number).isRequired,
   getItemName: PropTypes.func,
+  handleLeaveFeedback: PropTypes.func,
 };
 
 export default Feedback;
-
-/* Проверить без ' '  */
