@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import s from './FeedbackOptions.module.css';
 
-function Feedback({ options, getItemName, handleLeaveFeedback }) {
+function Feedback({ options, getItemNameBtn, handleLeaveFeedback }) {
   const feedbackNames = Object.keys(options);
 
   return (
@@ -12,20 +12,8 @@ function Feedback({ options, getItemName, handleLeaveFeedback }) {
         {feedbackNames.map(item => (
           <li key={item}>
             <button onClick={() => handleLeaveFeedback(item)} className={s.btn}>
-              {getItemName(item)}
+              {getItemNameBtn(item)}
             </button>
-          </li>
-        ))}
-      </ul>
-      <h2>Statistics</h2>
-      <ul>
-        git
-        {feedbackNames.map(item => (
-          <li key={item}>
-            <p>
-              {getItemName(item)}
-              {':'}
-            </p>
           </li>
         ))}
       </ul>

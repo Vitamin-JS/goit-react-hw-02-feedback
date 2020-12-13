@@ -1,0 +1,11 @@
+.feedbackStyles {
+  list-style: none;
+  font-size: 18px;
+  width: 150px;
+  line-height: 1.4;
+  margin-right: 20px;
+  background-color: rgb(228, 209, 209);
+  color: rgb(27, 28, 29);
+  font-weight: 600;
+  font-style: italic;
+}
