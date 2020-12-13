@@ -6,28 +6,28 @@ function Statistics({ good, neutral, bad, total, positiveFeedbackPercent }) {
   return (
     <>
       <h2 className={s.feedbackStyles}>Statistics</h2>
-      <table className={s.resultsList}>
+      <table className={s.table}>
         <tbody>
-          <tr>
+          <tr className={s.valueStyle}>
             <td>Good: </td>
-            <td className={s.valueStyle}>{good}</td>
+            <td>{good}</td>
           </tr>
-          <tr>
+          <tr className={s.valueStyle}>
             <td>Neutral: </td>
-            <td className={s.valueStyle}>{neutral}</td>
+            <td>{neutral}</td>
           </tr>
-          <tr>
+          <tr className={s.valueStyle}>
             <td>Bad: </td>
-            <td className={s.valueStyle}>{bad}</td>
+            <td>{bad}</td>
           </tr>
           <br></br>
-          <tr>
+          <tr className={s.valueStyle}>
             <td>Total: </td>
-            <td className={s.valueStyle}>{total}</td>
+            <td>{total}</td>
           </tr>
-          <tr>
+          <tr className={s.valueStyle}>
             <td>Positive feedback: </td>
-            <td className={s.valueStyle}>{positiveFeedbackPercent}</td>
+            <td>{positiveFeedbackPercent}</td>
           </tr>
         </tbody>
       </table>

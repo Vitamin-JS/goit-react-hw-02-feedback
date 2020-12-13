@@ -1,12 +1,15 @@
 .feedbackStyles {
   list-style: none;
   font-size: 24px;
-  line-height: 1.4;
-  margin-right: 40px;
-  background-color: rgb(228, 209, 209);
-  color: rgb(27, 28, 29);
   font-weight: 600;
   font-style: italic;
+  line-height: 1.4;
+  margin-left: 25px;
+  margin-bottom: 0;
+  width: 385px;
+  background-color: rgb(182, 187, 248);
+  color: rgb(27, 28, 29);
+  text-align: center;
 }
 
 .valueStyle {
@@ -14,4 +17,11 @@
   font-weight: 500;
   font-size: 18px;
   color: rgb(43, 47, 51);
+}
+
+.table {
+  margin-left: 25px;
+  background-color: rgb(240, 239, 239);
+  width: 385px;
+  padding: 5px;
 }
