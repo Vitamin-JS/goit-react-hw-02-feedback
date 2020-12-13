@@ -1,4 +1,11 @@
-.title {
+title {
+  margin-left: 40px;
+  color: #1b0e8f;
+  font-style: oblique;
+  font-weight: 500;
+}
+
+.titleStatistics {
   list-style: none;
   font-size: 24px;
   font-weight: 600;
@@ -10,18 +17,4 @@
   background-color: rgb(182, 187, 248);
   color: rgb(27, 28, 29);
   text-align: center;
-}
-
-.valueStyle {
-  padding-left: 20px;
-  font-weight: 500;
-  font-size: 18px;
-  color: rgb(43, 47, 51);
-}
-
-.table {
-  margin-left: 25px;
-  background-color: rgb(240, 239, 239);
-  width: 385px;
-  padding: 5px;
 }

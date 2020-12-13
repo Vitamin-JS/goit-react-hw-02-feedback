@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import s from './Statistics.module.css';
 
-function Statistics({ good, neutral, bad, total, positiveFeedbackPercent }) {
+function Statistics({ good, neutral, bad, total, positivePercentage }) {
   return (
     <>
-      <h2 className={s.feedbackStyles}>Statistics</h2>
+      {/* <h2 className={s.title}>Statistics</h2> */}
       <table className={s.table}>
         <tbody>
           <tr className={s.valueStyle}>
@@ -27,7 +27,7 @@ function Statistics({ good, neutral, bad, total, positiveFeedbackPercent }) {
           </tr>
           <tr className={s.valueStyle}>
             <td>Positive feedback: </td>
-            <td>{positiveFeedbackPercent}%</td>
+            <td>{positivePercentage}%</td>
           </tr>
         </tbody>
       </table>
@@ -40,7 +40,7 @@ Statistics.propTypes = {
   neutral: PropTypes.number.isRequired,
   bad: PropTypes.number.isRequired,
   total: PropTypes.number,
-  positiveFeedbackPercent: PropTypes.number,
+  positivePercentage: PropTypes.number,
 };
 
 export default Statistics;
