@@ -2,57 +2,45 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import s from './Statistics.module.css';
 
-//   Исправить рендер отзывов  Имя: значение, посмотреть в других репозиториях !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-function Statistics({
-  feedbackList,
-  total,
-  positiveFeedbackPercent,
-  getItemNameBtn,
-}) {
-  const feedbackArray = Object.entries(feedbackList);
-  console.log(feedbackArray);
-
-  const feedbackNames = Object.keys(feedbackArray);
-  console.log(feedbackNames);
-
-  const feedbackValues = Object.values(feedbackArray);
-  console.log(feedbackValues);
-
+function Statistics({ good, neutral, bad, total, positiveFeedbackPercent }) {
   return (
     <>
-      <h2>Statistics</h2>
-      <ul>
-        {feedbackArray.map(item => (
-          <li key={item}>
-            <p className={s.feedbackStyles}>
-              {feedbackNames}
-              {':'}
-              {feedbackValues}
-            </p>
-          </li>
-        ))}
-
-        <li>
-          <p className={s.feedbackStyles}>Total: {total}</p>
-        </li>
-
-        <li>
-          <p className={s.feebbackStyles}>
-            Positive feedback: {positiveFeedbackPercent}%
-          </p>
-        </li>
-      </ul>
+      <h2 className={s.feedbackStyles}>Statistics</h2>
+      <table className={s.resultsList}>
+        <tbody>
+          <tr>
+            <td>Good: </td>
+            <td className={s.valueStyle}>{good}</td>
+          </tr>
+          <tr>
+            <td>Neutral: </td>
+            <td className={s.valueStyle}>{neutral}</td>
+          </tr>
+          <tr>
+            <td>Bad: </td>
+            <td className={s.valueStyle}>{bad}</td>
+          </tr>
+          <br></br>
+          <tr>
+            <td>Total: </td>
+            <td className={s.valueStyle}>{total}</td>
+          </tr>
+          <tr>
+            <td>Positive feedback: </td>
+            <td className={s.valueStyle}>{positiveFeedbackPercent}</td>
+          </tr>
+        </tbody>
+      </table>
     </>
   );
 }
 
 Statistics.propTypes = {
-  feedbackList: PropTypes.object,
-  total: PropTypes.func,
-  positiveFeedbackPercent: PropTypes.func,
-  getItemNameForStat: PropTypes.func,
-  getItemNameBtn: PropTypes.string,
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  total: PropTypes.number,
+  positiveFeedbackPercent: PropTypes.number,
 };
 
 export default Statistics;
