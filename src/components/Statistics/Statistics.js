@@ -20,14 +20,14 @@ function Statistics({ good, neutral, bad, total, positiveFeedbackPercent }) {
             <td>Bad: </td>
             <td>{bad}</td>
           </tr>
-          <br></br>
+
           <tr className={s.valueStyle}>
             <td>Total: </td>
             <td>{total}</td>
           </tr>
           <tr className={s.valueStyle}>
             <td>Positive feedback: </td>
-            <td>{positiveFeedbackPercent}</td>
+            <td>{positiveFeedbackPercent}%</td>
           </tr>
         </tbody>
       </table>
