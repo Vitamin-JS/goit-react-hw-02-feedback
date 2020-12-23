@@ -51,8 +51,8 @@ class App extends Component {
           />
         </Section>
 
-        {this.countTotalFeedback() ? (
-          <Section title="Statistics:">
+        <Section title="Statistics:">
+          {this.countTotalFeedback() ? (
             <Statistics
               good={this.state.good}
               bad={this.state.bad}
@@ -60,10 +60,10 @@ class App extends Component {
               total={this.countTotalFeedback()}
               positivePercentage={this.countPositiveFeedbackPercentage()}
             />
-          </Section>
-        ) : (
-          <Notification message="No feedback given" />
-        )}
+          ) : (
+            <Notification message="No feedback given" />
+          )}{' '}
+        </Section>
       </>
     );
   }
